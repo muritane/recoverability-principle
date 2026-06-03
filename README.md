@@ -1,147 +1,203 @@
-# Recoverability Principle
+# Recoverability Principle (State-Space Formulation)
 
 ## Motivation
 
-Reality is high-dimensional, dynamic, and only partially observable.
+Bounded agents operate within dynamic environments.
 
-Any bounded agent possesses finite:
+The challenge is not merely reaching desirable states.
 
-* memory,
-* computation,
-* sensing,
-* attention,
-* lifetime,
-* resources.
+The challenge is remaining capable of reaching desirable states after disturbance, uncertainty, error, and change.
 
-Therefore a complete one-to-one representation of reality is impossible.
+Many systems fail while appearing successful because they optimize immediate objectives while consuming the capacities that enable future adaptation.
 
-A representation that preserved all information would effectively become another instance of reality itself and would cease to function as a compression.
+Examples include:
+
+* organisms that exhaust repair capacity,
+* organizations that exhaust reserves,
+* institutions that suppress correction mechanisms,
+* agents that destroy their ability to update beliefs.
+
+The relevant quantity is therefore not only current performance.
+
+It is the preservation of future adaptive capacity.
 
 ---
 
-# P1. Compression is Necessary
+# Definitions
 
-Every agent operates through representations.
+## D1. State Space
 
-Representations necessarily discard information.
-
-Therefore:
+Let:
 
 ```text
-Map ≠ Territory
+S
 ```
 
-not accidentally but structurally.
+denote the set of possible system states.
 
-Lossy representation is not a failure mode.
+A state:
 
-It is a prerequisite for bounded cognition.
+```text
+s ∈ S
+```
+
+contains all variables required to describe the system at a given time.
+
+Examples:
+
+* position, velocity, acceleration,
+* energy reserves,
+* financial reserves,
+* organizational trust,
+* model parameters,
+* environmental conditions.
 
 ---
 
-# P2. Error is Necessary
+## D2. Viability Region
 
-Since every representation is lossy:
+Let:
+
+```text
+V ⊂ S
+```
+
+denote the set of viable states.
+
+A state is viable if the system can continue functioning within the constraints that define its existence.
+
+Examples:
+
+* biological survival,
+* operational functionality,
+* organizational continuity,
+* computational integrity.
+
+Outside:
+
+```text
+V
+```
+
+the system has lost viability.
+
+---
+
+## D3. Trajectory
+
+A trajectory is a sequence of states through time:
+
+```text
+T = {s(t)}
+```
+
+A trajectory represents the path taken through state-space.
+
+Two trajectories may reach the same destination while producing different consequences for future viability.
+
+---
+
+## D4. Disturbance
+
+A disturbance is any perturbation not fully predicted by the system.
+
+Examples:
+
+* environmental changes,
+* model error,
+* noise,
+* resource shocks,
+* adversarial actions.
+
+Disturbances move the system through state-space.
+
+---
+
+## D5. Reachable Set
+
+For a state:
+
+```text
+s
+```
+
+define:
+
+```text
+R(s)
+```
+
+as the set of states reachable from:
+
+```text
+s
+```
+
+under available actions and constraints.
+
+The reachable set determines future possibilities.
+
+---
+
+## D6. Recoverability
+
+Recoverability is the capacity of a system to return to viable trajectories after disturbance.
+
+Operationally:
+
+```text
+Recoverability(s)
+    =
+Viable Reachable Set(s)
+```
+
+where:
+
+```text
+Viable Reachable Set(s)
+=
+R(s) ∩ V
+```
+
+Recoverability therefore measures the remaining volume of viable future possibilities.
+
+---
+
+# P1. Bounded Systems Are Necessarily Incomplete
+
+No bounded system can represent its environment perfectly.
+
+Therefore:
 
 ```text
 Representation Error > 0
 ```
 
-necessarily.
+is unavoidable.
 
-The existence of error is not evidence of incompetence.
-
-It follows directly from finite representation capacity.
-
-The objective cannot be:
-
-```text
-Eliminate Error
-```
-
-because this objective is generally unattainable.
+Error is a structural consequence of finite resources.
 
 ---
 
-# P3. Drift is Inevitable
+# P2. Dynamic Environments Generate Drift
 
-Reality changes.
-
-Environments change.
-
-Agents change.
-
-Resource distributions change.
-
-Constraints change.
+Environments change over time.
 
 Therefore:
 
 ```text
-Map(t)
+Representation Error(t)
 ```
 
-and
+tends to increase without correction.
 
-```text
-Reality(t)
-```
-
-naturally diverge over time.
-
-This divergence is called drift.
-
-Drift is not pathology.
-
-Drift is the default condition of dynamic systems.
+Drift is the default condition.
 
 ---
 
-# P4. Recoverability Dominates Long Horizons
+# P3. Feedback Preserves Coupling
 
-A representation can be evaluated along at least two dimensions:
-
-```text
-Current Accuracy
-```
-
-and
-
-```text
-Capacity For Correction
-```
-
-Both matter.
-
-However, in dynamic environments, accuracy is temporary.
-
-Drift continuously degrades even highly accurate representations.
-
-Therefore long-term usefulness depends increasingly on:
-
-```text
-Recoverability
-```
-
-The central question changes from:
-
-```text
-Is this map correct?
-```
-
-to:
-
-```text
-Can this map become less wrong when reality disagrees?
-```
-
----
-
-# P5. Feedback Preserves Coupling
-
-A representation remains useful only while coupled to reality.
-
-Coupling requires a correction channel.
+A system remains useful only while maintaining coupling with reality.
 
 Generic form:
 
@@ -152,248 +208,195 @@ Observation
     ↓
 Error Signal
     ↓
-Representation Update
+State Update
     ↓
 Action
 ```
 
-Feedback is therefore not primarily about optimization.
-
-Feedback exists to preserve coupling.
-
-Without correction, drift accumulates.
+Feedback exists primarily to preserve viability under drift.
 
 ---
 
-# P6. Observability Enables Recovery
+# P4. States And Capacities Are Distinct
 
-Without observability:
+A desirable state is not equivalent to preserving the capacity to reach desirable states.
 
-```text
-Error Signal = 0
-```
-
-regardless of actual error magnitude.
-
-The agent loses the ability to distinguish:
+Examples:
 
 ```text
-Low Error
+Profit
+≠
+Ability To Generate Profit
+
+Health
+≠
+Ability To Recover Health
+
+Knowledge
+≠
+Ability To Learn
 ```
 
-from
-
-```text
-Unobserved Error
-```
-
-Observability is therefore valuable because it enables recovery.
-
-Observability is not the objective.
-
-Recoverability is the objective.
-
-However, observation is not free.
-
-Monitoring consumes resources and may itself introduce noise.
-
-The problem is therefore not maximizing observation.
-
-The problem is maintaining sufficient observation to support correction.
+Confusing states with capacities is a common source of failure.
 
 ---
 
-# P7. Open-Loop Execution Is Conditional
+# P5. Trajectories Matter
 
-Open-loop execution assumes:
+System evaluation cannot depend solely on destination states.
 
-```text
-Expected Drift
-    <
-Acceptable Error
-```
+The path through state-space affects:
 
-over the execution horizon.
+* wear,
+* reserves,
+* optionality,
+* adaptability,
+* future reachability.
 
-Open-loop control is appropriate when:
-
-* environment is stable,
-* execution horizon is short,
-* model fidelity is high,
-* consequences of error are limited.
-
-Open-loop control is therefore a special case.
-
-Closed-loop control becomes necessary when divergence threatens viability.
+Two trajectories ending in the same state may leave radically different future possibilities.
 
 ---
 
-# P8. Existence Creates Pressure For Coupling
+# P6. Adaptive Capacity Is A Higher-Order Resource
 
-A rock can tolerate arbitrary model error.
+A system possesses adaptive capacity when disturbances can be absorbed without leaving the viability region.
 
-A living agent cannot.
+Adaptive capacity increases with:
 
-If accumulated error can threaten:
+* redundancy,
+* reserves,
+* diversity,
+* observability,
+* flexibility,
+* learning ability.
 
-* viability,
-* function,
-* survival,
-* agency,
-
-then maintaining coupling becomes valuable.
-
-Thus:
-
-```text
-Finite Agent
-+
-Uncertain Environment
-+
-Existence Constraint
-=
-Need For Feedback
-```
-
-The pressure for updating emerges from existence itself.
+Adaptive capacity expands viable reachability.
 
 ---
 
-# P9. Recoverability Requires Preserving Recovery Windows
+# P7. Optimization Consumes Capacity
 
-Not all errors are recoverable.
+Optimization is not free.
 
-Some failures destroy the ability to correct future failures.
+Pursuit of immediate objectives often consumes adaptive capacity.
 
-Examples include:
-
-* extinction,
-* fatal accidents,
-* irreversible system collapse,
-* certain ecological thresholds,
-* unrecoverable resource exhaustion.
-
-In such cases:
+Examples:
 
 ```text
-Recoverability Window = 0
+Efficiency
+    ↓
+Redundancy
+
+Specialization
+    ↓
+Flexibility
+
+Extraction
+    ↓
+Reserves
 ```
 
-after the failure occurs.
-
-Therefore a recoverable system must not only correct error.
-
-It must preserve the capacity to continue correcting error.
-
-Safety margins, redundancy, reserves, and resilience exist primarily to preserve future recoverability.
+Therefore maximizing current performance may reduce future recoverability.
 
 ---
 
-# P10. Privileged Maps Are Drift Amplifiers
+# P8. Recoverability Is A Dynamic Quantity
 
-A privileged map is a representation exempted from correction.
+Recoverability is not a fixed property.
 
-Examples may include:
+It can be:
 
-* ideology,
-* identity,
-* authority,
-* institution,
-* framework,
-* personal belief.
-
-The problem is not the content.
-
-The problem is suspension of the update mechanism.
-
-Generic form:
-
-```text
-Reality
-    X
-Correction Channel
-    X
-Representation
-```
-
-Once correction is blocked:
-
-```text
-Drift Accumulation Rate
-    >
-Correction Rate
-```
-
-and divergence grows.
-
----
-
-# P11. Stability And Adaptation Must Coexist
-
-A representation that never updates accumulates drift.
-
-A representation that updates indiscriminately accumulates noise.
-
-Therefore recoverability requires balancing:
-
-```text
-Adaptation
-```
-
-and
-
-```text
-Stability
-```
-
-Different maps may require different update rates.
-
-Some maps should adapt rapidly.
-
-Others should change only under strong evidence.
-
-The objective is neither rigidity nor volatility.
-
-The objective is sustainable responsiveness.
-
----
-
-# P12. No Map Is Exempt
-
-Because all maps are compressions:
-
-* personal maps,
-* institutional maps,
-* scientific maps,
-* social maps,
-* framework maps,
-
-share the same limitation.
-
-No map possesses direct identity with reality.
+* accumulated,
+* consumed,
+* regenerated,
+* destroyed.
 
 Therefore:
 
 ```text
-All Maps Are Reality-Testable
+dRecoverability/dt
 ```
 
-and
+is itself a meaningful system variable.
+
+---
+
+# P9. Failure Often Begins In The Recovery Layer
+
+System collapse is frequently preceded by degradation of:
+
+* reserves,
+* observability,
+* correction mechanisms,
+* experimentation capacity,
+* diversity,
+* repair systems.
+
+Performance metrics may remain stable while recoverability deteriorates.
+
+Therefore recoverability may provide earlier warning signals than performance.
+
+---
+
+# P10. Irreversible Boundaries Destroy Recoverability
+
+Some transitions eliminate future recovery.
+
+Examples:
+
+* extinction,
+* catastrophic injury,
+* institutional collapse,
+* ecological tipping points.
+
+Crossing such boundaries causes:
 
 ```text
-All Maps Are Updateable
+Recoverability → 0
 ```
 
-including this principle itself.
+Future correction becomes impossible.
+
+---
+
+# P11. Long-Term Viability Depends On Recoverability
+
+In dynamic environments:
+
+```text
+Long-Term Viability
+    ∝
+Recoverability
+```
+
+because disturbances are inevitable and future adaptation requires remaining viable future trajectories.
+
+---
+
+# P12. Recoverability Dominates Instantaneous Optimization
+
+For sufficiently long horizons and sufficiently dynamic environments:
+
+```text
+Preservation Of Recoverability
+```
+
+becomes more important than
+
+```text
+Optimization Of Any Single State Variable
+```
+
+because optimization is meaningful only while future adaptation remains possible.
 
 ---
 
 # Recoverability Principle
 
-A bounded agent cannot maintain a perfect representation of reality.
+A system should be evaluated not only by the states it reaches, but by how its trajectories affect its future viable reachable state-space.
 
-Therefore compression, representation error, and drift are unavoidable.
+Long-term viability depends on preserving the capacity to recover from disturbance, error, and drift while maintaining the ability to continue recovering in the future.
 
-Long-term viability depends not on permanent correctness but on preserving a functioning correction process.
+The fundamental objective is therefore not permanent correctness, permanent optimization, or permanent stability.
 
-A system remains viable to the extent that it can detect, absorb, and recover from representation error before accumulated divergence reaches critical boundaries, while preserving its future capacity to continue recovering from error.
+The fundamental objective is preservation and regeneration of recoverability.
