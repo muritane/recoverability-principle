@@ -97,26 +97,30 @@ Drift is the default condition of dynamic systems.
 
 ---
 
-# P4. Correction Becomes Fundamental
+# P4. Recoverability Dominates Long Horizons
 
-If:
-
-* compression is unavoidable,
-* error is unavoidable,
-* drift is unavoidable,
-
-then correctness cannot be the primary property of a representation.
-
-Instead the primary property becomes:
+A representation can be evaluated along at least two dimensions:
 
 ```text
-Correctability
+Current Accuracy
 ```
 
-or
+and
 
 ```text
-Updateability
+Capacity For Correction
+```
+
+Both matter.
+
+However, in dynamic environments, accuracy is temporary.
+
+Drift continuously degrades even highly accurate representations.
+
+Therefore long-term usefulness depends increasingly on:
+
+```text
+Recoverability
 ```
 
 The central question changes from:
@@ -128,7 +132,7 @@ Is this map correct?
 to:
 
 ```text
-Can this map absorb correction?
+Can this map become less wrong when reality disagrees?
 ```
 
 ---
@@ -157,9 +161,11 @@ Feedback is therefore not primarily about optimization.
 
 Feedback exists to preserve coupling.
 
+Without correction, drift accumulates.
+
 ---
 
-# P6. Observability Supports Recoverability
+# P6. Observability Enables Recovery
 
 Without observability:
 
@@ -181,11 +187,19 @@ from
 Unobserved Error
 ```
 
-Therefore observability is valuable because it enables recovery.
+Observability is therefore valuable because it enables recovery.
 
 Observability is not the objective.
 
 Recoverability is the objective.
+
+However, observation is not free.
+
+Monitoring consumes resources and may itself introduce noise.
+
+The problem is therefore not maximizing observation.
+
+The problem is maintaining sufficient observation to support correction.
 
 ---
 
@@ -245,7 +259,37 @@ The pressure for updating emerges from existence itself.
 
 ---
 
-# P9. Privileged Maps Are Drift Amplifiers
+# P9. Recoverability Requires Preserving Recovery Windows
+
+Not all errors are recoverable.
+
+Some failures destroy the ability to correct future failures.
+
+Examples include:
+
+* extinction,
+* fatal accidents,
+* irreversible system collapse,
+* certain ecological thresholds,
+* unrecoverable resource exhaustion.
+
+In such cases:
+
+```text
+Recoverability Window = 0
+```
+
+after the failure occurs.
+
+Therefore a recoverable system must not only correct error.
+
+It must preserve the capacity to continue correcting error.
+
+Safety margins, redundancy, reserves, and resilience exist primarily to preserve future recoverability.
+
+---
+
+# P10. Privileged Maps Are Drift Amplifiers
 
 A privileged map is a representation exempted from correction.
 
@@ -275,14 +319,46 @@ Representation
 Once correction is blocked:
 
 ```text
-Drift Accumulation Rate > Correction Rate
+Drift Accumulation Rate
+    >
+Correction Rate
 ```
 
 and divergence grows.
 
 ---
 
-# P10. No Map Is Exempt
+# P11. Stability And Adaptation Must Coexist
+
+A representation that never updates accumulates drift.
+
+A representation that updates indiscriminately accumulates noise.
+
+Therefore recoverability requires balancing:
+
+```text
+Adaptation
+```
+
+and
+
+```text
+Stability
+```
+
+Different maps may require different update rates.
+
+Some maps should adapt rapidly.
+
+Others should change only under strong evidence.
+
+The objective is neither rigidity nor volatility.
+
+The objective is sustainable responsiveness.
+
+---
+
+# P12. No Map Is Exempt
 
 Because all maps are compressions:
 
@@ -316,8 +392,8 @@ including this principle itself.
 
 A bounded agent cannot maintain a perfect representation of reality.
 
-Therefore representation error and drift are unavoidable.
+Therefore compression, representation error, and drift are unavoidable.
 
-The primary requirement is not perfect correctness but preservation of a functioning correction channel.
+Long-term viability depends not on permanent correctness but on preserving a functioning correction process.
 
-A system remains viable to the extent that it can detect, absorb, and recover from representation error before accumulated divergence reaches existentially relevant boundaries.
+A system remains viable to the extent that it can detect, absorb, and recover from representation error before accumulated divergence reaches critical boundaries, while preserving its future capacity to continue recovering from error.
