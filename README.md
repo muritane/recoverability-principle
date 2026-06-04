@@ -543,3 +543,419 @@ Long-term viability depends on preserving and regenerating recoverability: the q
 The fundamental objective is not permanent correctness, permanent optimization, or permanent stability.
 
 The fundamental objective is preserving the ability to continue adapting, correcting, recovering, and remaining capable of future recovery.
+
+---
+
+# P15. Recoverability Exists Across Scales
+
+Recoverability is not necessarily conserved at a single level of analysis.
+
+A loss of recoverability at one scale may increase recoverability at another.
+
+Examples:
+
+```text
+Cell
+    ↓
+Organism
+
+Organism
+    ↓
+Species
+
+Individual
+    ↓
+Institution
+
+Institution
+    ↓
+Civilization
+```
+
+An individual component may fail while increasing the adaptive capacity of the larger system.
+
+Examples include:
+
+* immune cell sacrifice,
+* experimental failure generating knowledge,
+* biological selection,
+* organizational learning.
+
+Therefore recoverability should always be evaluated relative to a specified system boundary.
+
+---
+
+# P16. The Recovery Layer Is More Fundamental Than The Resource Layer
+
+Resources are not equivalent to the ability to regenerate resources.
+
+Examples:
+
+```text
+Energy
+≠
+Ability To Acquire Energy
+
+Knowledge
+≠
+Ability To Learn
+
+Capital
+≠
+Ability To Generate Capital
+
+Health
+≠
+Ability To Recover Health
+```
+
+A system often remains functional while the mechanisms that regenerate functionality deteriorate.
+
+Failure frequently begins in the recovery layer before appearing in resource metrics.
+
+---
+
+# D11. Regenerative Capacity
+
+For a state:
+
+```text
+s
+```
+
+define:
+
+```text
+G(s)
+```
+
+as the system's capacity to restore, replace, repair, adapt, or expand lost functionality.
+
+Examples include:
+
+* biological repair,
+* learning ability,
+* innovation capacity,
+* institutional reform,
+* technological replacement,
+* redundancy creation.
+
+Regenerative capacity contributes directly to recoverability.
+
+---
+
+# P17. Capacity Consumption Is Not Failure
+
+All real systems consume capacity.
+
+Examples:
+
+* batteries lose cycle life,
+* organisms age,
+* machines wear,
+* institutions accumulate friction,
+* information becomes obsolete.
+
+Therefore:
+
+```text
+Capacity Loss > 0
+```
+
+is often unavoidable.
+
+Failure is not the existence of capacity consumption.
+
+Failure occurs when regenerative capacity becomes insufficient to compensate for capacity loss.
+
+---
+
+# P18. Long-Term Viability Depends On Regenerative Balance
+
+Let:
+
+```text
+C(t)
+```
+
+represent adaptive capacity.
+
+Let:
+
+```text
+L(t)
+```
+
+represent capacity loss.
+
+Let:
+
+```text
+G(t)
+```
+
+represent regenerative gain.
+
+Long-term viability requires:
+
+```text
+G(t)
+≥
+L(t)
+```
+
+over sufficiently long horizons.
+
+Systems collapse when capacity destruction persistently exceeds capacity regeneration.
+
+---
+
+# P19. Recoverability Growth Creates Escape Dynamics
+
+A system can remain viable despite continual degradation if recoverability grows faster than threats accumulate.
+
+Examples:
+
+* technological progress,
+* biological repair enhancement,
+* scientific discovery,
+* institutional learning,
+* distributed knowledge accumulation.
+
+When:
+
+```text
+dRecoverability/dt > 0
+```
+
+persistently,
+
+future viable reachability expands despite ongoing disturbance.
+
+---
+
+# P20. Disturbance Can Increase Recoverability
+
+Not all disturbances reduce recoverability.
+
+Under suitable conditions:
+
+```text
+Disturbance
+    ↓
+Learning
+    ↓
+Adaptation
+    ↓
+Expanded Reachability
+```
+
+or:
+
+```text
+Disturbance
+    ↓
+Innovation
+    ↓
+New Capability
+```
+
+The system may emerge with a larger viable reachable state-space than before disturbance.
+
+Recoverability may therefore be accumulated through successful interaction with uncertainty.
+
+---
+
+# P21. Success Has Multiple Levels
+
+Not all successful outcomes are equivalent.
+
+## Type I Success
+
+```text
+Reach Desired State
+```
+
+The objective is achieved.
+
+Future recoverability is not considered.
+
+---
+
+## Type II Success
+
+```text
+Reach Desired State
++
+Preserve Recoverability
+```
+
+The objective is achieved while maintaining future viable possibilities.
+
+---
+
+## Type III Success
+
+```text
+Reach Desired State
++
+Increase Recoverability
+```
+
+The objective is achieved while expanding future viable possibilities.
+
+---
+
+These forms of success are strictly ordered:
+
+```text
+Type III
+>
+Type II
+>
+Type I
+```
+
+with respect to long-term viability.
+
+---
+
+# P22. Trajectory Quality Depends On Recoverability Effects
+
+Two trajectories may terminate in the same state while producing radically different future possibilities.
+
+Examples:
+
+```text
+Ground Reached
+```
+
+via:
+
+```text
+Elevator
+```
+
+or:
+
+```text
+Jump From Roof
+```
+
+Both trajectories reach the same destination.
+
+Only one preserves future reachability.
+
+Trajectory quality must therefore be evaluated by its effects on recoverability rather than destination alone.
+
+---
+
+# P23. Avoidance Is Often Superior To Recovery
+
+A system need not demonstrate recovery if disturbance can be avoided.
+
+Examples:
+
+```text
+Avoid Cliff
+>
+Recover From Fall
+
+Avoid Bankruptcy
+>
+Recover From Bankruptcy
+
+Avoid Catastrophe
+>
+Recover From Catastrophe
+```
+
+Recoverability includes the capacity to recognize and avoid dangerous regions of state-space before damage occurs.
+
+---
+
+# P24. Recoverability Includes Future Creation
+
+Recoverability is not limited to preserving existing options.
+
+Recoverability may also increase through the creation of new possibilities.
+
+Examples:
+
+* scientific discovery,
+* technological invention,
+* social coordination,
+* infrastructure construction,
+* capability development.
+
+The future reachable state-space is therefore expandable.
+
+---
+
+# P25. Capability Development Follows A General Progression
+
+Many successful adaptive systems exhibit the pattern:
+
+```text
+Exist
+    ↓
+Persist
+    ↓
+Compose
+    ↓
+Scale
+    ↓
+Optimize
+```
+
+where:
+
+## Exist
+
+A capability first appears.
+
+---
+
+## Persist
+
+The capability survives through time.
+
+---
+
+## Compose
+
+The capability combines with other capabilities.
+
+---
+
+## Scale
+
+The capability becomes distributed and redundant.
+
+---
+
+## Optimize
+
+Performance improves without destroying recoverability.
+
+---
+
+Each stage generally expands future viable reachability.
+
+Optimization that destroys persistence, composability, scalability, or recoverability is often self-defeating.
+
+---
+
+# Extended Recoverability Principle
+
+A system should be evaluated not only by the states it reaches, but by how its trajectories affect its future viable reachable state-space under disturbance and uncertainty.
+
+Long-term viability depends on preserving and regenerating recoverability: the quality, diversity, robustness, accessibility, and expandability of future viable possibilities.
+
+Capacity consumption is unavoidable.
+
+The critical question is whether the system preserves sufficient regenerative capacity to restore, replace, repair, adapt, and expand future possibilities faster than disturbance, degradation, and uncertainty eliminate them.
+
+The highest form of success is not merely reaching desirable states.
+
+It is reaching desirable states while increasing the system's future capacity to adapt, recover, learn, create, and continue expanding its viable reachable future.
