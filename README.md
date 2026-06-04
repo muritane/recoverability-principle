@@ -1,66 +1,63 @@
-# Recoverability Principle (State-Space Formulation)
+Recoverability Principle (State-Space Formulation)
 
-## Motivation
+Motivation
 
-Bounded agents operate within dynamic environments.
+Bounded systems operate within dynamic, uncertain environments.
 
 The challenge is not merely reaching desirable states.
 
-The challenge is remaining capable of reaching desirable states after disturbance, uncertainty, error, and change.
+The challenge is preserving the ability to reach desirable states after disturbance, uncertainty, error, and environmental change.
 
 Many systems fail while appearing successful because they optimize immediate objectives while consuming the capacities that enable future adaptation.
 
 Examples include:
 
 * organisms that exhaust repair capacity,
-* organizations that exhaust reserves,
+* companies that exhaust reserves,
 * institutions that suppress correction mechanisms,
-* agents that destroy their ability to update beliefs.
+* models that destroy their ability to update,
+* ecosystems that lose diversity,
+* agents that collapse uncertainty into brittle assumptions.
 
 The relevant quantity is therefore not only current performance.
 
-It is the preservation of future adaptive capacity.
+It is the preservation and regeneration of future adaptive capacity.
 
 ---
 
-# Definitions
+Definitions
 
-## D1. State Space
+D1. State Space
 
 Let:
 
-```text
 S
-```
 
 denote the set of possible system states.
 
 A state:
 
-```text
 s ∈ S
-```
 
 contains all variables required to describe the system at a given time.
 
-Examples:
+Examples include:
 
-* position, velocity, acceleration,
+* physical configuration,
 * energy reserves,
 * financial reserves,
-* organizational trust,
+* trust relationships,
 * model parameters,
-* environmental conditions.
+* environmental conditions,
+* uncertainty distributions.
 
 ---
 
-## D2. Viability Region
+D2. Viability Region
 
 Let:
 
-```text
 V ⊂ S
-```
 
 denote the set of viable states.
 
@@ -70,34 +67,32 @@ Examples:
 
 * biological survival,
 * operational functionality,
-* organizational continuity,
+* institutional continuity,
 * computational integrity.
 
 Outside:
 
-```text
 V
-```
 
 the system has lost viability.
 
 ---
 
-## D3. Trajectory
+D3. Trajectory
 
 A trajectory is a sequence of states through time:
 
-```text
 T = {s(t)}
-```
 
-A trajectory represents the path taken through state-space.
+representing the path taken through state-space.
 
-Two trajectories may reach the same destination while producing different consequences for future viability.
+Two trajectories may arrive at the same state while producing very different future possibilities.
+
+Trajectory therefore matters independently of destination.
 
 ---
 
-## D4. Disturbance
+D4. Disturbance
 
 A disturbance is any perturbation not fully predicted by the system.
 
@@ -107,71 +102,140 @@ Examples:
 * model error,
 * noise,
 * resource shocks,
-* adversarial actions.
+* adversarial actions,
+* sensor uncertainty,
+* unforeseen interactions.
 
 Disturbances move the system through state-space.
 
+Disturbance is not exceptional.
+
+Disturbance is the default condition of dynamic environments.
+
 ---
 
-## D5. Reachable Set
+D5. Reachable Set
 
 For a state:
 
-```text
 s
-```
 
 define:
 
-```text
 R(s)
-```
 
 as the set of states reachable from:
 
-```text
 s
-```
 
 under available actions and constraints.
 
-The reachable set determines future possibilities.
+The reachable set defines future possibilities.
 
 ---
 
-## D6. Recoverability
+D6. Disturbance-Reachable Set
+
+Let:
+
+Rd(s)
+
+denote the set of states that remain reachable after accounting for expected disturbances.
+
+This captures the practical future options available under uncertainty.
+
+---
+
+D7. Recoverability
 
 Recoverability is the capacity of a system to return to viable trajectories after disturbance.
 
 Operationally:
 
-```text
 Recoverability(s)
-    =
-Viable Reachable Set(s)
-```
-
-where:
-
-```text
-Viable Reachable Set(s)
 =
-R(s) ∩ V
-```
+Measure(Rd(s) ∩ V)
 
-Recoverability therefore measures the remaining volume of viable future possibilities.
+where the measure may incorporate:
+
+* number of viable futures,
+* probability of reaching them,
+* recovery cost,
+* robustness,
+* distance from failure boundaries,
+* available control authority.
+
+Recoverability is therefore not merely the existence of future options.
+
+Recoverability measures the quality and accessibility of future viable possibilities.
 
 ---
 
-# P1. Bounded Systems Are Necessarily Incomplete
+D8. Viability Margin
 
-No bounded system can represent its environment perfectly.
+For a state:
+
+s
+
+define:
+
+M(s)
+
+as the distance from the nearest viability boundary.
+
+Large margins imply greater tolerance to disturbance.
+
+Small margins imply fragility.
+
+Two states may be viable while possessing radically different viability margins.
+
+---
+
+D9. Optionality
+
+Optionality is the diversity of future trajectories available to the system.
+
+Optionality increases when:
+
+* multiple strategies remain available,
+* uncertainty remains representable,
+* alternative interpretations remain possible,
+* control directions remain accessible.
+
+Optionality contributes to recoverability.
+
+---
+
+D10. Singularity
+
+A singularity is a state where the dimensionality or diversity of future possibilities collapses.
+
+Examples include:
+
+* manipulator kinematic singularities,
+* monopolized supply chains,
+* ecological monocultures,
+* rigid ideologies,
+* over-specialized organizations.
+
+At singularities:
+
+Accessible Future Directions
+↓
+
+even if current performance remains acceptable.
+
+Singularities therefore reduce recoverability.
+
+---
+
+P1. Bounded Systems Are Necessarily Incomplete
+
+No bounded system can represent reality perfectly.
 
 Therefore:
 
-```text
 Representation Error > 0
-```
 
 is unavoidable.
 
@@ -179,15 +243,13 @@ Error is a structural consequence of finite resources.
 
 ---
 
-# P2. Dynamic Environments Generate Drift
+P2. Dynamic Environments Generate Drift
 
-Environments change over time.
+Environments change continuously.
 
 Therefore:
 
-```text
 Representation Error(t)
-```
 
 tends to increase without correction.
 
@@ -195,13 +257,12 @@ Drift is the default condition.
 
 ---
 
-# P3. Feedback Preserves Coupling
+P3. Feedback Preserves Coupling
 
 A system remains useful only while maintaining coupling with reality.
 
 Generic form:
 
-```text
 Reality
     ↓
 Observation
@@ -211,19 +272,17 @@ Error Signal
 State Update
     ↓
 Action
-```
 
 Feedback exists primarily to preserve viability under drift.
 
 ---
 
-# P4. States And Capacities Are Distinct
+P4. States And Capacities Are Distinct
 
 A desirable state is not equivalent to preserving the capacity to reach desirable states.
 
 Examples:
 
-```text
 Profit
 ≠
 Ability To Generate Profit
@@ -235,13 +294,16 @@ Ability To Recover Health
 Knowledge
 ≠
 Ability To Learn
-```
+
+Accuracy
+≠
+Ability To Correct Error
 
 Confusing states with capacities is a common source of failure.
 
 ---
 
-# P5. Trajectories Matter
+P5. Trajectories Matter
 
 System evaluation cannot depend solely on destination states.
 
@@ -251,15 +313,16 @@ The path through state-space affects:
 * reserves,
 * optionality,
 * adaptability,
-* future reachability.
+* future reachability,
+* uncertainty management.
 
 Two trajectories ending in the same state may leave radically different future possibilities.
 
 ---
 
-# P6. Adaptive Capacity Is A Higher-Order Resource
+P6. Adaptive Capacity Is A Higher-Order Resource
 
-A system possesses adaptive capacity when disturbances can be absorbed without leaving the viability region.
+Adaptive capacity is the ability to absorb disturbance while remaining viable.
 
 Adaptive capacity increases with:
 
@@ -268,13 +331,14 @@ Adaptive capacity increases with:
 * diversity,
 * observability,
 * flexibility,
-* learning ability.
+* learning ability,
+* experimentation capacity.
 
 Adaptive capacity expands viable reachability.
 
 ---
 
-# P7. Optimization Consumes Capacity
+P7. Optimization Consumes Capacity
 
 Optimization is not free.
 
@@ -282,7 +346,6 @@ Pursuit of immediate objectives often consumes adaptive capacity.
 
 Examples:
 
-```text
 Efficiency
     ↓
 Redundancy
@@ -294,15 +357,37 @@ Flexibility
 Extraction
     ↓
 Reserves
-```
+
+Certainty
+    ↓
+Alternative Hypotheses
 
 Therefore maximizing current performance may reduce future recoverability.
 
 ---
 
-# P8. Recoverability Is A Dynamic Quantity
+P8. Uncertainty Has Structural Value
 
-Recoverability is not a fixed property.
+Uncertainty is not merely ignorance.
+
+Maintaining multiple plausible models can preserve future adaptability.
+
+Systems that collapse uncertainty prematurely often become brittle.
+
+Examples include:
+
+* overconfident forecasts,
+* rigid doctrines,
+* excessive specialization,
+* single-point failure architectures.
+
+Representational diversity can therefore increase recoverability.
+
+---
+
+P9. Recoverability Is Dynamic
+
+Recoverability is not fixed.
 
 It can be:
 
@@ -313,32 +398,49 @@ It can be:
 
 Therefore:
 
-```text
 dRecoverability/dt
-```
 
 is itself a meaningful system variable.
 
 ---
 
-# P9. Failure Often Begins In The Recovery Layer
+P10. Failure Often Begins In The Recovery Layer
 
-System collapse is frequently preceded by degradation of:
+Collapse is frequently preceded by degradation of:
 
 * reserves,
 * observability,
-* correction mechanisms,
+* repair mechanisms,
 * experimentation capacity,
 * diversity,
-* repair systems.
+* redundancy,
+* learning capability.
 
 Performance metrics may remain stable while recoverability deteriorates.
 
-Therefore recoverability may provide earlier warning signals than performance.
+Recoverability therefore provides earlier warning signals than performance alone.
 
 ---
 
-# P10. Irreversible Boundaries Destroy Recoverability
+P11. Recoverability Collapse Often Appears As Loss Of Degrees Of Freedom
+
+Many failures involve progressive restriction of future possibilities.
+
+Examples:
+
+* manipulator singularities,
+* debt traps,
+* institutional lock-in,
+* ecological simplification,
+* technological dependence.
+
+The system remains functional while the accessible future state-space contracts.
+
+Failure frequently becomes visible only after future maneuverability has already been lost.
+
+---
+
+P12. Irreversible Boundaries Destroy Recoverability
 
 Some transitions eliminate future recovery.
 
@@ -347,56 +449,51 @@ Examples:
 * extinction,
 * catastrophic injury,
 * institutional collapse,
-* ecological tipping points.
+* ecological tipping points,
+* irreversible information loss.
 
 Crossing such boundaries causes:
 
-```text
 Recoverability → 0
-```
 
 Future correction becomes impossible.
 
 ---
 
-# P11. Long-Term Viability Depends On Recoverability
+P13. Long-Term Viability Depends On Recoverability
 
 In dynamic environments:
 
-```text
 Long-Term Viability
     ∝
 Recoverability
-```
 
-because disturbances are inevitable and future adaptation requires remaining viable future trajectories.
-
----
-
-# P12. Recoverability Dominates Instantaneous Optimization
-
-For sufficiently long horizons and sufficiently dynamic environments:
-
-```text
-Preservation Of Recoverability
-```
-
-becomes more important than
-
-```text
-Optimization Of Any Single State Variable
-```
-
-because optimization is meaningful only while future adaptation remains possible.
+because disturbances are inevitable and adaptation requires future viable trajectories.
 
 ---
 
-# Recoverability Principle
+P14. Recoverability Constrains Optimization
 
-A system should be evaluated not only by the states it reaches, but by how its trajectories affect its future viable reachable state-space.
+Optimization is meaningful only while adaptation remains possible.
 
-Long-term viability depends on preserving the capacity to recover from disturbance, error, and drift while maintaining the ability to continue recovering in the future.
+Therefore:
 
-The fundamental objective is therefore not permanent correctness, permanent optimization, or permanent stability.
+Optimization
 
-The fundamental objective is preservation and regeneration of recoverability.
+must be evaluated relative to its effects on:
+
+Recoverability
+
+Actions that improve immediate performance while substantially reducing recoverability may decrease long-term viability.
+
+---
+
+Recoverability Principle
+
+A system should be evaluated not only by the states it reaches, but by how its trajectories affect its future viable reachable state-space under disturbance and uncertainty.
+
+Long-term viability depends on preserving and regenerating recoverability: the quality, diversity, robustness, and accessibility of future viable possibilities.
+
+The fundamental objective is not permanent correctness, permanent optimization, or permanent stability.
+
+The fundamental objective is preserving the ability to continue adapting, correcting, recovering, and remaining capable of future recovery.
